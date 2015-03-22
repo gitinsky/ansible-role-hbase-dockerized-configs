@@ -1,0 +1,14 @@
+- name: create ext volume for configs
+  file: state=directory path={{ ext_hadoop_conf_volume }}
+
+- name: put hbase-site.xml config
+  template: src=hbase-site.xml dest={{ ext_hadoop_conf_volume }}/hbase-site.xml
+
+- name: put hbase-env.sh config
+  template: src=hbase-env.sh dest={{ ext_hadoop_conf_volume }}/hbase-env.sh
+
+- name: put hbase-policy.xml config
+  template: src=hbase-policy.xml dest={{ ext_hadoop_conf_volume }}/hbase-policy.xml
+
+- name: put log4j.properties config
+  template: src=log4j.properties dest={{ ext_hadoop_conf_volume }}/log4j.properties
